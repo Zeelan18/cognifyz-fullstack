@@ -9,6 +9,7 @@ const bodyParser = require('body-parser');
 
 const app = express();
 const db = new sqlite3.Database('./database.db');
+require('dotenv').config();
 
 db.serialize(() => {
 
@@ -314,7 +315,7 @@ app.get('/api/weather/:city', apiLimiter, async (req, res) => {
 
         const response =
             await axios.get(
-                `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=4e2463ec4449cef83ff6863af2cd82c8&units=metric`
+                `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${process.env.WEATHER_API_KEY}&units=metric`
             );
 
         const weatherData = {
