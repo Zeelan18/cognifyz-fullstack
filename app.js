@@ -6,10 +6,11 @@ const rateLimit = require('express-rate-limit');
 
 const bcrypt = require('bcryptjs');
 const bodyParser = require('body-parser');
+require('dotenv').config();
 
 const app = express();
 const db = new sqlite3.Database('./database.db');
-require('dotenv').config();
+
 
 db.serialize(() => {
 
@@ -340,12 +341,14 @@ app.get('/api/weather/:city', apiLimiter, async (req, res) => {
 
     } catch (error) {
 
-        res.status(500).json({
-            error:
-            "Unable to fetch weather data"
-        });
+    console.log("Weather Error:");
+    console.log(error.response?.data || error.message);
 
-    }
+    res.status(500).json({
+        error: error.message
+    });
+
+}
 
 });
 
