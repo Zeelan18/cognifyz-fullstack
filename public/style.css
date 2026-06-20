@@ -1,0 +1,119 @@
+body{
+    font-family: Arial, sans-serif;
+    background:#f4f6f9;
+    margin:0;
+}
+
+.hero{
+    background:linear-gradient(135deg,#667eea,#764ba2);
+    color:white;
+    padding:80px 20px;
+}
+
+.hero h1{
+    font-size:48px;
+}
+
+.feature-card{
+    background:white;
+    padding:25px;
+    border-radius:15px;
+    text-align:center;
+    margin-bottom:20px;
+    transition:0.4s;
+    box-shadow:0 5px 15px rgba(0,0,0,0.1);
+}
+
+.feature-card:hover{
+    transform:translateY(-10px);
+}
+
+.form-section{
+    background:white;
+    padding:30px;
+    border-radius:15px;
+    box-shadow:0 0 20px rgba(0,0,0,0.1);
+    margin-bottom:40px;
+}
+
+input,
+select,
+textarea{
+    width:100%;
+    padding:12px;
+    margin:10px 0;
+    border:1px solid #ddd;
+    border-radius:8px;
+}
+
+button{
+    width:100%;
+    padding:12px;
+    border:none;
+    border-radius:8px;
+    background:#667eea;
+    color:white;
+    transition:0.3s;
+}
+
+button:hover{
+    transform:scale(1.03);
+}
+
+footer{
+    background:#212529;
+    color:white;
+    text-align:center;
+    padding:20px;
+}
+
+@media(max-width:768px){
+
+.hero h1{
+    font-size:30px;
+}
+
+.feature-card{
+    margin-bottom:15px;
+}
+
+}
+@keyframes fadeIn{
+
+from{
+opacity:0;
+transform:translateY(20px);
+}
+
+to{
+opacity:1;
+transform:translateY(0);
+}
+
+}
+
+.hero{
+animation:fadeIn 1s ease;
+}
+#welcomeText{
+    display:block;
+    color:#667eea;
+    font-weight:bold;
+    margin-bottom:10px;
+}
+
+#selectedDepartment{
+    color:green;
+    font-weight:bold;
+}
+
+#passwordStrength{
+    display:block;
+    font-weight:bold;
+    margin-top:5px;
+    margin-bottom:10px;
+}
+
+textarea{
+    min-height:120px;
+}
